@@ -1,8 +1,7 @@
-version: '3.9'
-
 services:
   mariadb:
     build: ./requirements/mariadb
+    image: mariadb
     volumes: 
       - db:/var/lib/mysql
     expose: 
@@ -15,6 +14,7 @@ services:
 
   wordpress:
     build: ./requirements/wordpress
+    image: wordpress
     volumes: 
       - wp:/var/www
     expose:
@@ -29,6 +29,7 @@ services:
 
   nginx:
     build: ./requirements/nginx
+    image: nginx
     volumes: 
       - wp:/var/www
     ports:
