@@ -8,8 +8,8 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 	mv wp-cli.phar /usr/bin/wp
 
 COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
-COPY ./tools/entrypoint.sh .
+COPY ./tools/run.sh /tools/run.sh
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x /tools/run.sh
 EXPOSE 9000
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT sh /tools/run.sh

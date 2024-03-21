@@ -1,4 +1,3 @@
-#!/bin/sh
 # WordPress 다운로드 및 설정
 mkdir -p /var/www && cd /var/www
 wp core download --allow-root

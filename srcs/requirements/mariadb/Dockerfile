@@ -10,5 +10,6 @@ RUN mkdir -m 700 /var/run/mysqld && \
 COPY ./tools/run.sh /tools/run.sh
 COPY ./conf/my.cnf /etc/mysql/my.cnf
 
+RUN chmod +x /tools/run.sh
 EXPOSE 3306
 ENTRYPOINT sh /tools/run.sh
