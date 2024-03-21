@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   mariadb:
@@ -48,12 +48,12 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/jiseong/data/mariadb_data
+      device: /home/jisulee/data/mariadb_data
   wp :
     driver : local
     driver_opts :
       type : none
-      device : /Users/jiseong/data/wordpress_data
+      device : /home/jisulee/data/wordpress_data
       o : bind
 
 # NETWORK

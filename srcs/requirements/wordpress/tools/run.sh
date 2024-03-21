@@ -7,7 +7,7 @@ wp config create --dbname="${MARIADB_DATABASE}" --dbuser="${MARIADB_USER}" --dbp
 
 # WordPress 설치
 if ! wp core is-installed --allow-root; then
-    wp core install --url="127.0.0.1" --title="${WP_TITLE}" --admin_user="${WP_ADMIN}" --admin_password="${WP_ADMIN_PASSWORD}" --admin_email="${WP_ADMIN_EMAIL}" --skip-email --allow-root
+    wp core install --url="${WP_URL}" --title="${WP_TITLE}" --admin_user="${WP_ADMIN}" --admin_password="${WP_ADMIN_PASSWORD}" --admin_email="${WP_ADMIN_EMAIL}" --skip-email --allow-root
 	wp user create "${WP_USER}" "${WP_USER_EMAIL}" --user_pass="${WP_USER_PASSWORD}" --allow-root
 fi
 

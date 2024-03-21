@@ -1,13 +1,13 @@
 NAME = inception
 DOCKER_COMPOSE_PATH := ./srcs/docker-compose.yml
-VOLUME_PATH := /Users/jiseong/data
+VOLUME_PATH := /home/jisulee/data
 
 all: $(NAME)
 $(NAME): up
 
 up:
-	mkdir -p $(VOLUME_PATH)/mariadb_data/
-	mkdir -p $(VOLUME_PATH)/wordpress_data/
+	sudo mkdir -p $(VOLUME_PATH)/mariadb_data/
+	sudo mkdir -p $(VOLUME_PATH)/wordpress_data/
 	docker-compose -f $(DOCKER_COMPOSE_PATH) up --build -d
 
 down:
@@ -18,7 +18,7 @@ clean:
 
 fclean: clean
 	docker system prune -f
-	rm -rf $(VOLUME_PATH)
+	sudo rm -rf $(VOLUME_PATH)
 
 re:
 	make fclean
