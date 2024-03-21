@@ -1,6 +1,6 @@
 NAME = inception
 DOCKER_COMPOSE_PATH := ./srcs/docker-compose.yml
-VOLUME_PATH := /Users/jiseong/data
+VOLUME_PATH := /home/jisulee/data
 
 all: $(NAME)
 $(NAME): up
